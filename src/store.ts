@@ -1,10 +1,10 @@
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type StringArrayState = string[]
+type cardsState = string[]
 
-const stringArraySlice = createSlice({
-    name: 'stringArray',
-    initialState: [] as StringArrayState,
+const cardsSlice = createSlice({
+    name: 'cards',
+    initialState: [] as cardsState,
     reducers: {
         addString: (state, action: PayloadAction<string>) => {
             state.push(action.payload)
@@ -14,11 +14,11 @@ const stringArraySlice = createSlice({
 
 const store = configureStore({
     reducer: {
-        stringArray: stringArraySlice.reducer,
+        cards: cardsSlice.reducer,
     }
 });
 
-export const { addString } = stringArraySlice.actions;
+export const { addString } = cardsSlice.actions;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 

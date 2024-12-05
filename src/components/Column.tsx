@@ -9,7 +9,7 @@ interface Props {
 export function Column({
     title
 }: Props) {
-    const cards = useSelector((state: RootState) => state.stringArray)
+    const cards = useSelector((state: RootState) => state.cards)
 
     return (
         <div className="bg-blue-500 h-screen w-64 border-round text-center rounded">
