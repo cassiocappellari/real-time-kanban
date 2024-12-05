@@ -6,7 +6,7 @@ const cardsSlice = createSlice({
     name: 'cards',
     initialState: [] as cardsState,
     reducers: {
-        addString: (state, action: PayloadAction<string>) => {
+        addCard: (state, action: PayloadAction<string>) => {
             state.push(action.payload)
         },
     },
@@ -18,7 +18,7 @@ const store = configureStore({
     }
 });
 
-export const { addString } = cardsSlice.actions;
+export const { addCard } = cardsSlice.actions;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 

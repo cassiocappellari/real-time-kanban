@@ -1,4 +1,4 @@
-import { Button } from './components/Button';
+import { AddCard } from './components/AddCard';
 import { Column } from './components/Column';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     </div>
     <div className='static'>
       <div className="absolute left-10 top-20 h-16 w-16">
-        <Button/>
+        <AddCard />
       </div>
     </div></>
   );
