@@ -9,6 +9,9 @@ const cardsSlice = createSlice({
         addCard: (state, action: PayloadAction<string>) => {
             state.push(action.payload)
         },
+        removeCard: (state, action: PayloadAction<number>) => {
+            state.splice(action.payload, 1)
+        } 
     },
 });
 
@@ -18,7 +21,7 @@ const store = configureStore({
     }
 });
 
-export const { addCard } = cardsSlice.actions;
+export const { addCard, removeCard } = cardsSlice.actions;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
