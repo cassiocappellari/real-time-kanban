@@ -22,15 +22,13 @@ export function AddCard() {
             <button onClick={handleOnClick}>
                 Add
             </button>
-        </div>
-        <div>
-                <input 
+        </div><div>
+                <input
                     className="border-2 border-black rounded"
-                    name="cardName" 
-                    type="text" 
-                    value={cardTitle} 
-                    onChange={e => setCardTitle(e.target.value)} 
-                />
-        </div></>
+                    name="cardName"
+                    type="text"
+                    value={cardTitle}
+                    onChange={e => setCardTitle(e.target.value)} />
+            </div></>
     )
 }

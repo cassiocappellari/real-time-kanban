@@ -1,6 +1,7 @@
 import { Card } from "./Card";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
+import { ColumnTitle } from "../enums";
 
 interface Props {
     title: string;
@@ -18,7 +19,7 @@ export function Column({
                 {title}
             </p>
         </div>
-        {title === 'To do' && 
+        {title === ColumnTitle.TO_DO && 
          cards.map((title, index) => (
             <div className="mt-6">
                 <Card key={index} title={title}/>
