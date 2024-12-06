@@ -18,11 +18,13 @@ export function Column({
                 {title}
             </p>
         </div>
-        {cards.map((title, index) => (
+        {title === 'To do' && 
+         cards.map((title, index) => (
             <div className="mt-6">
                 <Card key={index} title={title}/>
             </div>
-        ))}
+        ))
+        }
         </div>
     )
 }
