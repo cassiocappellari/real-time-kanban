@@ -1,15 +1,45 @@
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ColumnTitle } from './enums';
 
-type cardsState = string[]
+type Card = {
+    cardTitle: string;
+    currentColumn: ColumnTitle
+}
 
-const cardsSlice = createSlice({
-    name: 'cards',
-    initialState: [] as cardsState,
+const toDoCardsSlice = createSlice({
+    name: 'toDoCards',
+    initialState: [] as Card[],
     reducers: {
-        addCard: (state, action: PayloadAction<string>) => {
+        addToDoCard: (state, action: PayloadAction<Card>) => {
             state.push(action.payload)
         },
-        removeCard: (state, action: PayloadAction<number>) => {
+        removeToDoCard: (state, action: PayloadAction<number>) => {
+            state.splice(action.payload, 1)
+        } 
+    },
+});
+
+const inProgressCardsSlice = createSlice({
+    name: 'inProgressCards',
+    initialState: [] as Card[],
+    reducers: {
+        addInProgressCard: (state, action: PayloadAction<Card>) => {
+            state.push(action.payload)
+        },
+        removeInProgressCard: (state, action: PayloadAction<number>) => {
+            state.splice(action.payload, 1)
+        } 
+    },
+});
+
+const doneCardsSlice = createSlice({
+    name: 'doneCards',
+    initialState: [] as Card[],
+    reducers: {
+        addDoneCard: (state, action: PayloadAction<Card>) => {
+            state.push(action.payload)
+        },
+        removeDoneCard: (state, action: PayloadAction<number>) => {
             state.splice(action.payload, 1)
         } 
     },
@@ -17,11 +47,16 @@ const cardsSlice = createSlice({
 
 const store = configureStore({
     reducer: {
-        cards: cardsSlice.reducer,
+        toDoCards: toDoCardsSlice.reducer,
+        inProgressCards: inProgressCardsSlice.reducer,
+        doneCards: doneCardsSlice.reducer,
     }
 });
 
-export const { addCard, removeCard } = cardsSlice.actions;
+export const { addToDoCard, removeToDoCard } = toDoCardsSlice.actions;
+export const { addInProgressCard, removeInProgressCard } = inProgressCardsSlice.actions;
+export const { addDoneCard, removeDoneCard } = doneCardsSlice.actions;
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
