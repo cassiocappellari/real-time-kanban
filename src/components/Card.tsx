@@ -15,16 +15,26 @@ export function Card({ title, currentColumn }: Props) {
 
     return (
         <div
-            className="bg-red-500 h-16 w-64 border-round text-center rounded"
+            className="bg-white shadow-md rounded-lg p-4 border border-gray-200 hover:shadow-xl transition-all relative"
             onMouseEnter={() => setIsMouseHover(true)}
             onMouseLeave={() => setIsMouseHover(false)}
         >
-            <p>{title}</p>
+            <p className="text-gray-800 font-medium">{title}</p>
             {isMouseHover && (
-                <div className="flex flex-row justify-around">
-                    <button onClick={() => removeCard(title)}>x</button>
+                <div className="flex justify-between mt-2">
+                    <button
+                        onClick={() => removeCard(title)}
+                        className="bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 rounded-md transition"
+                    >
+                        ✖ Remove
+                    </button>
                     {currentColumn !== ColumnTitle.DONE && (
-                        <button onClick={() => moveCard(title)}>+</button>
+                        <button
+                            onClick={() => moveCard(title)}
+                            className="bg-green-500 hover:bg-green-600 text-white text-xs px-3 py-1 rounded-md transition"
+                        >
+                            ➜ Move
+                        </button>
                     )}
                 </div>
             )}
