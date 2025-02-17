@@ -35,7 +35,12 @@ export function AddCard() {
             />
             <button
                 onClick={handleOnClick}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition-all"
+                disabled={!cardTitle.trim()}
+                className={`px-6 py-2 rounded-lg shadow-md transition-all font-semibold ${
+                    !cardTitle.trim()
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-blue-600 hover:bg-blue-700 text-white"
+                }`}
             >
                 Add Card
             </button>
