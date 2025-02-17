@@ -21,6 +21,10 @@ export function AddCard() {
             dispatch(addToDoCard(newCard));
             setCardTitle('');
         }
+
+        if (cards.length === MAXIMUM_CARDS_NUMBER) {
+            window.alert('You reached the limit of created cards!')
+        }
     };
 
     return (
