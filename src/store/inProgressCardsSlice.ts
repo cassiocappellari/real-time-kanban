@@ -1,10 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ColumnTitle } from "../enums";
-
-type Card = {
-    cardTitle: string;
-    currentColumn: ColumnTitle;
-};
+import { Card } from "../types";
 
 const inProgressCardsSlice = createSlice({
     name: "inProgressCards",

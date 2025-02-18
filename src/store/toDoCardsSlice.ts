@@ -1,10 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ColumnTitle } from "../enums";
+import { Card } from "../types";
 
-type Card = {
-    cardTitle: string;
-    currentColumn: ColumnTitle;
-};
 
 const toDoCardsSlice = createSlice({
     name: "toDoCards",
