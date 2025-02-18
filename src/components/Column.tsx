@@ -1,7 +1,7 @@
 import { Card } from "./Card";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
 import { ColumnTitle } from "../enums";
+import { RootState } from "../store/store";
 
 interface Props {
     title: string;

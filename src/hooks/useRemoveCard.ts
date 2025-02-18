@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { removeToDoCard, removeInProgressCard, removeDoneCard, AppDispatch, RootState } from "../store";
+import { AppDispatch, removeDoneCard, removeInProgressCard, removeToDoCard, RootState } from "../store/store";
 
 export const useRemoveCard = () => {
     const dispatch: AppDispatch = useDispatch();

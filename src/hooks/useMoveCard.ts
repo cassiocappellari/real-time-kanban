@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addInProgressCard, addDoneCard, removeToDoCard, removeInProgressCard, AppDispatch, RootState } from "../store";
 import { ColumnTitle } from "../enums";
+import { addDoneCard, addInProgressCard, AppDispatch, removeInProgressCard, removeToDoCard, RootState } from "../store/store";
 
 export const useMoveCard = () => {
     const dispatch: AppDispatch = useDispatch();

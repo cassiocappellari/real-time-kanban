@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addToDoCard, AppDispatch, RootState } from "../store";
 import { ColumnTitle } from "../enums";
+import { addToDoCard, AppDispatch, RootState } from "../store/store";
 
 const MAXIMUM_CARDS_NUMBER = 8;
 
