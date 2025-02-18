@@ -10,8 +10,8 @@ interface Props {
 
 export function Card({ title, currentColumn }: Props) {
     const [isMouseHover, setIsMouseHover] = useState<boolean>(false);
-    const removeCard = useRemoveCard();
-    const moveCard = useMoveCard();
+    const { removeCard } = useRemoveCard();
+    const { moveCard } = useMoveCard();
 
     return (
         <div

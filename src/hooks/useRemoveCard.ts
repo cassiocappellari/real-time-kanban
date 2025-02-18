@@ -25,5 +25,5 @@ export const useRemoveCard = () => {
         }
     };
 
-    return removeCard;
+    return { removeCard };
 };

@@ -22,5 +22,5 @@ export const useMoveCard = () => {
         }
     };
 
-    return moveCard;
+    return { moveCard };
 };

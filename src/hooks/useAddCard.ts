@@ -4,7 +4,7 @@ import { ColumnTitle } from "../enums";
 
 const MAXIMUM_CARDS_NUMBER = 8;
 
-export function useAddCard() {
+export const useAddCard = () => {
     const dispatch: AppDispatch = useDispatch();
     const cards = useSelector((state: RootState) => state.toDoCards);
 
